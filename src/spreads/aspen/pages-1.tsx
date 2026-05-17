@@ -205,16 +205,19 @@ function FaunaItem({ slug, name, hint, children }: { slug: string; name: string;
   );
 }
 
-function WitnessItem({ slug, text }: { slug: string; text: ReactNode }) {
+function WitnessItem({ slug, title, children }: { slug: string; title: string; children: ReactNode }) {
   return (
     <div className="witness-item">
       <Illustration
         src={`/assets/aspen/spotted-${slug}.jpg`}
         hint=" "
         className="illo-circle"
-        style={{ width: 42, height: 42 }}
+        style={{ width: 80, height: 80 }}
       />
-      <div className="witness-text">{text}</div>
+      <div>
+        <div className="witness-name">{title}</div>
+        <div className="witness-desc">{children}</div>
+      </div>
     </div>
   );
 }
@@ -222,7 +225,7 @@ function WitnessItem({ slug, text }: { slug: string; text: ReactNode }) {
 export function AspenPage4() {
   return (
     <Page side="right" runningHead="Aspen" folio="4">
-      <div style={{ display: 'grid', gridTemplateColumns: '1.05fr 0.95fr', gap: 28, marginTop: 16, height: '100%' }}>
+      <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 28, marginTop: 16, height: '100%' }}>
         <div>
           <div className="eyebrow" style={{ color: 'var(--ink)', fontSize: 10 }}>Field Guide To</div>
           <h2
@@ -264,17 +267,29 @@ export function AspenPage4() {
           </div>
         </div>
 
-        <div style={{ borderLeft: '1px solid var(--rule)', paddingLeft: 24 }}>
-          <div className="eyebrow" style={{ color: 'var(--ink)', fontSize: 9.5 }}>
-            Spotted, Overheard, or<br />Otherwise Witnessed
-          </div>
-          <div className="hr-dot" style={{ marginTop: 12 }}></div>
+        <div>
+          <div className="eyebrow" style={{ color: 'var(--ink)', fontSize: 10 }}>Spotted, Overheard, or Otherwise Witnessed</div>
+          <h2
+            className="title-m"
+            style={{ marginTop: 6, color: 'var(--red)', fontVariantCaps: 'all-small-caps', letterSpacing: '.05em' }}
+          >
+            The Sightings
+          </h2>
+          <div className="hr-dot"></div>
 
           <div className="witness-list">
-            <WitnessItem slug="argentine" text="At the St. Regis bar at 1 AM: an Argentine family of seven taking up two banquettes, ordering only Don Julio. They were not on vacation. They lived here three months a year." />
-            <WitnessItem slug="hat"       text="A man at Kemo Sabe spending forty-five minutes choosing between two nearly identical cowboy hats. His wife sat on a bench outside, scrolling, having long since chosen hers." />
-            <WitnessItem slug="veuve"     text="A man at Cloud Nine, in complete earnest, spraying a $400 bottle of Veuve Clicquot at his wife and three of her friends at 1 PM. They were laughing. The waiter was not." />
-            <WitnessItem slug="buddy"     text={<>A father at the bottom of the Snowmass kids' lesson area, to his sobbing five-year-old: <em>"Buddy. I paid for this. I paid a lot for this."</em></>} />
+            <WitnessItem slug="argentine" title="The Three-Month Residents">
+              At the St. Regis bar at 1 AM: an Argentine family of seven taking up two banquettes, ordering only Don Julio. They were not on vacation. They lived here three months a year.
+            </WitnessItem>
+            <WitnessItem slug="hat" title="The Forty-Five-Minute Hat">
+              A man at Kemo Sabe spending forty-five minutes choosing between two nearly identical cowboy hats. His wife sat on a bench outside, scrolling, having long since chosen hers.
+            </WitnessItem>
+            <WitnessItem slug="veuve" title="$400 of Foam">
+              A man at Cloud Nine, in complete earnest, spraying a $400 bottle of Veuve Clicquot at his wife and three of her friends at 1 PM. They were laughing. The waiter was not.
+            </WitnessItem>
+            <WitnessItem slug="buddy" title="Buddy">
+              A father at the bottom of the Snowmass kids' lesson area, to his sobbing five-year-old: <em>"Buddy. I paid for this. I paid a lot for this."</em>
+            </WitnessItem>
           </div>
         </div>
       </div>

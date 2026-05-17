@@ -1,0 +1,10 @@
+{
+  "slot": "hit-1.jpg",
+  "aspect": "square",
+  "size": "1024x1024",
+  "quality": "medium",
+  "model": "gpt-image-1",
+  "prompt": "Pen-and-watercolor illustration in the style of a contemporary illustrated ski guidebook. Confident black ink contour lines drawn with a fine pen describe every form, then filled with richly saturated watercolor washes \u2014 dense, layered, with visible brushstrokes and patches of unpainted white paper showing through within shapes. Visible cross-hatching and stippling in shadows. Crisp edges where ink meets paint. Detailed and storybook-illustrated, not loose or impressionistic. Palette: full-color but rooted in alpine blues, warm earth browns, deep evergreens, fresh snow whites, with a single saturated red accent where the subject calls for it. CRITICAL CONSTRAINTS: no caption text below or beside the image, no title text, no hand-lettered labels of any kind. The painting must fill the canvas edge-to-edge with NO white deckled border, NO painted frame, NO unpainted margin \u2014 the page provides its own framing. Background color must be a uniform warm cream paper #faf5e9 unless the subject explicitly calls for a scene.\n\nMatch the painting style, palette, and texture of the attached reference images exactly.\n\nSubject: A lone skier dropping in at the cornice ridge of Highland Bowl after a long bootpack \u2014 high-alpine, exposed, blue sky, fresh powder, distant Colorado peaks beyond. Full-bleed painting, fills the entire canvas, no caption text, no title text.",
+  "generated_at": "2026-05-17T06:40:54.400453+00:00",
+  "attempt": 1
+}
