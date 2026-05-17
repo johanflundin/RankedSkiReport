@@ -12,3 +12,9 @@ dist-ssr
 .vercel
 inspiration/
 legacy/
+.venv/
+__pycache__/
+*.pyc
+.env
+.env.local
+public/assets/*/*.error.txt

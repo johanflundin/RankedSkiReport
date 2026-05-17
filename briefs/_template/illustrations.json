@@ -1,0 +1,92 @@
+{
+  "chapter": "SLUG_HERE",
+  "output_dir": "public/assets/SLUG_HERE",
+  "style_prefix": "Pen-and-watercolor illustration in the style of a contemporary illustrated ski guidebook. Confident black ink contour lines drawn with a fine pen describe every form, then filled with richly saturated watercolor washes — dense, layered, with visible brushstrokes and patches of unpainted white paper showing through within shapes. Visible cross-hatching and stippling in shadows. Crisp edges where ink meets paint. Detailed and storybook-illustrated, not loose or impressionistic. Palette: full-color but rooted in alpine blues, warm earth browns, deep evergreens, fresh snow whites, with a single saturated red accent where the subject calls for it. Center the subject in the frame; allow a thin white deckled paper border around the entire image. Do not exceed the borders of a single panel.",
+  "size_defaults": {
+    "portrait": "1024x1536",
+    "landscape": "1536x1024",
+    "square": "1024x1024"
+  },
+  "slots": [
+    {
+      "filename": "p1-opening.jpg",
+      "aspect": "portrait",
+      "prompt": "Full-bleed opening watercolor: describe the signature scene — who, where, what they're wearing, what's happening, what's behind them."
+    },
+    {
+      "filename": "p2-gondola.jpg",
+      "aspect": "square",
+      "prompt": "Signature object for this resort — one iconic vehicle / lift / structure painted on cream paper ground."
+    },
+    {
+      "filename": "p3-portrait.jpg",
+      "aspect": "landscape",
+      "prompt": "Mid-mountain portrait scene of the daughter, distant skiers/conifers behind. Describe outfit and setting."
+    },
+    {
+      "filename": "fauna-1.jpg",
+      "aspect": "square",
+      "prompt": "Character portrait, head-and-shoulders: [name + diagnostic details]. Plain cream background."
+    },
+    {
+      "filename": "fauna-2.jpg",
+      "aspect": "square",
+      "prompt": "Character portrait, head-and-shoulders: [name + diagnostic details]. Plain cream background."
+    },
+    {
+      "filename": "fauna-3.jpg",
+      "aspect": "square",
+      "prompt": "Character portrait, head-and-shoulders: [name + diagnostic details]. Plain cream background."
+    },
+    {
+      "filename": "fauna-4.jpg",
+      "aspect": "square",
+      "prompt": "Character portrait, head-and-shoulders: [name + diagnostic details]. Plain cream background."
+    },
+    {
+      "filename": "fauna-5.jpg",
+      "aspect": "square",
+      "prompt": "Character portrait, head-and-shoulders: [name + diagnostic details]. Plain cream background."
+    },
+    {
+      "filename": "info-box.jpg",
+      "aspect": "landscape",
+      "prompt": "Atmospheric watercolor panorama of this resort's valley at dusk or dawn — soft colors, mountain silhouettes, faint village lights, calm empty lower band intended for small text overlay. No text, no labels."
+    },
+    {
+      "filename": "map.jpg",
+      "aspect": "square",
+      "prompt": "Hand-painted antique-style aerial map, 3/4 perspective. Describe the peaks, terrain, lower-mountain features, village location. No text, no pins, no route lines — those are overlaid digitally afterward. Just the painted base map."
+    },
+    {
+      "filename": "hit-1.jpg",
+      "aspect": "square",
+      "prompt": "Thumbnail scene for hit-list item 1."
+    },
+    {
+      "filename": "hit-2.jpg",
+      "aspect": "square",
+      "prompt": "Thumbnail scene for hit-list item 2."
+    },
+    {
+      "filename": "hit-3.jpg",
+      "aspect": "square",
+      "prompt": "Thumbnail scene for hit-list item 3."
+    },
+    {
+      "filename": "hit-4.jpg",
+      "aspect": "square",
+      "prompt": "Thumbnail scene for hit-list item 4."
+    },
+    {
+      "filename": "hit-5.jpg",
+      "aspect": "square",
+      "prompt": "Thumbnail scene for hit-list item 5."
+    },
+    {
+      "filename": "hit-6.jpg",
+      "aspect": "square",
+      "prompt": "Thumbnail scene for hit-list item 6."
+    }
+  ]
+}

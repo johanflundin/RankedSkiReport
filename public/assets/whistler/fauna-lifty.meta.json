@@ -1,0 +1,10 @@
+{
+  "slot": "fauna-lifty.jpg",
+  "aspect": "square",
+  "size": "1024x1024",
+  "quality": "medium",
+  "model": "gpt-image-1",
+  "prompt": "Pen-and-watercolor illustration in the style of a contemporary illustrated ski guidebook. Confident black ink contour lines drawn with a fine pen describe every form, then filled with richly saturated watercolor washes \u2014 dense, layered, with visible brushstrokes and patches of unpainted white paper showing through within shapes. Visible cross-hatching and stippling in shadows. Crisp edges where ink meets paint. Detailed and storybook-illustrated, not loose or impressionistic. Palette: full-color but rooted in alpine blues, warm earth browns, deep evergreens, fresh snow whites, with a single saturated red accent where the subject calls for it. Center the subject in the frame; allow a thin white deckled paper border around the entire image. Do not exceed the borders of a single panel.\n\nMatch the painting style, palette, and texture of the attached reference images exactly.\n\nSubject: Character portrait, head-and-shoulders: The Aussie Lifty (Jack). Young man, early 20s, sun-tanned, goggles on a black beanie. Working-holiday energy. Plain cream background.",
+  "generated_at": "2026-05-17T05:02:55.337276+00:00",
+  "attempt": 1
+}

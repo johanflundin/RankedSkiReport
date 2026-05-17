@@ -109,18 +109,20 @@ export function WhistlerPage2() {
         />
       </div>
 
-      <div className="stat-grid stat-grid-4" style={{ marginTop: 22 }}>
-        <StatCell icon={<IconMountainSingle />} label="Blackcomb" value={<>2,440 m <span className="slash">/</span> 8,000 ft</>} />
-        <StatCell icon={<IconMountainDouble />} label="Whistler"  value={<>2,182 m <span className="slash">/</span> 7,160 ft</>} />
-        <StatCell icon={<IconVertical />}        label="Vertical"  value={<>1,609 m <span className="slash">/</span> 5,280 ft</>} />
-        <StatCell icon={<IconGondola />}         label="36 Lifts"  value="mostly modern" />
-      </div>
-      <div className="stat-grid stat-grid-5">
-        <StatCell icon={<IconEpic />}      label="Epic"          value="Epic Pass" />
-        <StatCell icon={<IconScript />}    label="Vail"          value="Vail-owned" />
-        <StatCell icon={<IconAbilities />} label="All abilities" value="beginner to expert" />
-        <StatCell icon={<IconPlane />}     label="YVR"           value="+ 2 hr transfer" />
-        <StatCell icon={<IconSun />}       label="Nov – May"     value="season window" />
+      <div className="info-box-overlay" style={{ marginTop: 22 }}>
+        <div className="stat-grid stat-grid-4">
+          <StatCell icon={<IconMountainSingle />} label="Blackcomb" value={<>2,440 m <span className="slash">/</span> 8,000 ft</>} />
+          <StatCell icon={<IconMountainDouble />} label="Whistler"  value={<>2,182 m <span className="slash">/</span> 7,160 ft</>} />
+          <StatCell icon={<IconVertical />}        label="Vertical"  value={<>1,609 m <span className="slash">/</span> 5,280 ft</>} />
+          <StatCell icon={<IconGondola />}         label="36 Lifts"  value="mostly modern" />
+        </div>
+        <div className="stat-grid stat-grid-5">
+          <StatCell icon={<IconEpic />}      label="Epic"          value="Epic Pass" />
+          <StatCell icon={<IconScript />}    label="Vail"          value="Vail-owned" />
+          <StatCell icon={<IconAbilities />} label="All abilities" value="beginner to expert" />
+          <StatCell icon={<IconPlane />}     label="YVR"           value="+ 2 hr transfer" />
+          <StatCell icon={<IconSun />}       label="Nov – May"     value="season window" />
+        </div>
       </div>
 
       <div style={{ marginTop: 14, fontStyle: 'italic', color: 'var(--red)', fontWeight: 600, fontSize: 12.5 }}>

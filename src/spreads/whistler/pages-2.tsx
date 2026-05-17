@@ -27,31 +27,17 @@ export function WhistlerPage5() {
       </div>
 
       <div className="map-canvas" style={{ flex: 1, position: 'relative' }}>
+        <img
+          className="map-base"
+          src="/assets/whistler/map.jpg"
+          alt=""
+          draggable={false}
+        />
         <svg className="terrain" viewBox="0 0 600 600" preserveAspectRatio="none">
-          <rect x="0" y="0" width="600" height="280" fill="#f0eadd" />
-          <path
-            d="M0 280 L40 200 L80 160 L120 110 L160 70 L200 130 L220 90 L260 150 L300 180 L340 130 L380 90 L410 60 L450 130 L490 170 L530 210 L570 240 L600 280 Z"
-            fill="#e6dccc"
-            stroke="#9a8e76"
-            strokeWidth="1"
-          />
-          <path
-            d="M0 320 L60 270 L110 240 L150 210 L200 240 L260 220 L300 250 L340 220 L400 250 L450 230 L500 260 L550 290 L600 310 L600 360 L0 360 Z"
-            fill="#d9cdb8"
-            stroke="#8a7e65"
-            strokeWidth="1"
-            opacity=".85"
-          />
-          <path
-            d="M0 360 L60 350 L120 360 L200 350 L280 360 L360 350 L440 360 L520 350 L600 360 L600 440 L0 440 Z"
-            fill="#cfc2a8"
-          />
-          <path d="M0 440 L600 440 L600 600 L0 600 Z" fill="#c4b698" />
-
-          <text x="120" y="55" fontSize="11" fontWeight="700" fill="#1c1815" style={{ fontVariantCaps: 'all-small-caps', letterSpacing: '.12em' }}>BLACKCOMB</text>
-          <text x="120" y="72" fontSize="9" fontStyle="italic" fill="#6e6660">2,440 m / 8,000 ft</text>
-          <text x="380" y="55" fontSize="11" fontWeight="700" fill="#1c1815" style={{ fontVariantCaps: 'all-small-caps', letterSpacing: '.12em' }}>WHISTLER</text>
-          <text x="380" y="72" fontSize="9" fontStyle="italic" fill="#6e6660">2,182 m / 7,160 ft</text>
+          <text x="120" y="55" fontSize="11" fontWeight="700" fill="#fefdf9" stroke="#1c1815" strokeWidth=".4" paintOrder="stroke" style={{ fontVariantCaps: 'all-small-caps', letterSpacing: '.12em' }}>BLACKCOMB</text>
+          <text x="120" y="72" fontSize="9" fontStyle="italic" fill="#fefdf9" stroke="#1c1815" strokeWidth=".3" paintOrder="stroke">2,440 m / 8,000 ft</text>
+          <text x="380" y="55" fontSize="11" fontWeight="700" fill="#fefdf9" stroke="#1c1815" strokeWidth=".4" paintOrder="stroke" style={{ fontVariantCaps: 'all-small-caps', letterSpacing: '.12em' }}>WHISTLER</text>
+          <text x="380" y="72" fontSize="9" fontStyle="italic" fill="#fefdf9" stroke="#1c1815" strokeWidth=".3" paintOrder="stroke">2,182 m / 7,160 ft</text>
 
           <path className="map-lift" d="M460 510 L380 90" />
           <path className="map-lift" d="M380 510 L160 70" />
@@ -60,14 +46,14 @@ export function WhistlerPage5() {
           <path className="map-lift" d="M340 130 L260 150" />
           <path className="map-lift" d="M120 110 L60 270" />
 
-          <path d="M160 70 L380 90" stroke="#8a7e65" strokeWidth="1.2" strokeDasharray="6 4" fill="none" />
-          <text x="240" y="62" fontSize="9" fill="#1c1815" style={{ fontVariantCaps: 'all-small-caps', letterSpacing: '.14em', fontWeight: 700 }}>PEAK 2 PEAK</text>
+          <path d="M160 70 L380 90" stroke="#fefdf9" strokeWidth="1.4" strokeDasharray="6 4" fill="none" />
+          <text x="240" y="62" fontSize="9" fill="#fefdf9" stroke="#1c1815" strokeWidth=".3" paintOrder="stroke" style={{ fontVariantCaps: 'all-small-caps', letterSpacing: '.14em', fontWeight: 700 }}>PEAK 2 PEAK</text>
 
-          <text x="50"  y="200" fontSize="9.5" fill="#1c1815" style={{ fontVariantCaps: 'all-small-caps', letterSpacing: '.12em', fontWeight: 700 }}>GLACIER BOWL</text>
-          <text x="180" y="240" fontSize="9.5" fill="#1c1815" style={{ fontVariantCaps: 'all-small-caps', letterSpacing: '.12em', fontWeight: 700 }}>7TH HEAVEN</text>
-          <text x="420" y="160" fontSize="9.5" fill="#1c1815" style={{ fontVariantCaps: 'all-small-caps', letterSpacing: '.12em', fontWeight: 700 }}>SOLAR COASTER</text>
-          <text x="500" y="240" fontSize="9.5" fill="#1c1815" style={{ fontVariantCaps: 'all-small-caps', letterSpacing: '.12em', fontWeight: 700 }}>HARMONY</text>
-          <text x="430" y="475" fontSize="9.5" fill="#1c1815" style={{ fontVariantCaps: 'all-small-caps', letterSpacing: '.12em', fontWeight: 700 }}>EXCALIBUR</text>
+          <text x="50"  y="200" fontSize="9.5" fill="#fefdf9" stroke="#1c1815" strokeWidth=".3" paintOrder="stroke" style={{ fontVariantCaps: 'all-small-caps', letterSpacing: '.12em', fontWeight: 700 }}>GLACIER BOWL</text>
+          <text x="180" y="240" fontSize="9.5" fill="#fefdf9" stroke="#1c1815" strokeWidth=".3" paintOrder="stroke" style={{ fontVariantCaps: 'all-small-caps', letterSpacing: '.12em', fontWeight: 700 }}>7TH HEAVEN</text>
+          <text x="420" y="160" fontSize="9.5" fill="#fefdf9" stroke="#1c1815" strokeWidth=".3" paintOrder="stroke" style={{ fontVariantCaps: 'all-small-caps', letterSpacing: '.12em', fontWeight: 700 }}>SOLAR COASTER</text>
+          <text x="500" y="240" fontSize="9.5" fill="#fefdf9" stroke="#1c1815" strokeWidth=".3" paintOrder="stroke" style={{ fontVariantCaps: 'all-small-caps', letterSpacing: '.12em', fontWeight: 700 }}>HARMONY</text>
+          <text x="430" y="475" fontSize="9.5" fill="#fefdf9" stroke="#1c1815" strokeWidth=".3" paintOrder="stroke" style={{ fontVariantCaps: 'all-small-caps', letterSpacing: '.12em', fontWeight: 700 }}>EXCALIBUR</text>
 
           <path
             className="map-route"
@@ -78,27 +64,6 @@ export function WhistlerPage5() {
                C 80 160, 200 320, 280 460
                C 280 460, 360 480, 430 510"
           />
-
-          {Array.from({ length: 28 }).map((_, i) => {
-            const x = (i * 23) % 600 + 10;
-            const y = 380 + ((i * 7) % 60);
-            return (
-              <g key={i} transform={`translate(${x} ${y})`} opacity=".75">
-                <path d="M 0 6 L -4 0 L 0 -6 L 4 0 Z" fill="#5b6a3f" />
-              </g>
-            );
-          })}
-
-          <g transform="translate(220 470)">
-            <rect x="0" y="40" width="160" height="60" fill="#b8a583" />
-            <polygon points="0,40 30,20 60,40"     fill="#7a5638" />
-            <polygon points="40,40 70,12 100,40"   fill="#7a5638" />
-            <polygon points="80,40 110,18 140,40"  fill="#7a5638" />
-            <polygon points="120,40 150,22 170,40" fill="#7a5638" />
-            <polygon points="90,20 100,0 110,20"   fill="#8a4a3a" />
-            <rect x="95" y="20" width="10" height="20" fill="#b8a583" />
-            <text x="80" y="115" fontSize="10" fill="#1c1815" fontStyle="italic">Whistler Village</text>
-          </g>
         </svg>
 
         <div className="map-pins-layer">

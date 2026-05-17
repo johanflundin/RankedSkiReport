@@ -506,6 +506,31 @@ html, body {
   transform: translateX(-50%);
 }
 
+/* Info-box: atmospheric background under stat grids (Whistler) */
+.info-box-overlay {
+  position: relative;
+  background-image: url('/assets/whistler/info-box.jpg');
+  background-size: cover;
+  background-position: center;
+  border-radius: 2px;
+  isolation: isolate;
+}
+.info-box-overlay::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(15, 25, 45, 0.55) 0%, rgba(15, 25, 45, 0.78) 100%);
+  pointer-events: none;
+}
+.info-box-overlay > * { position: relative; }
+.info-box-overlay .stat-grid { border-color: rgba(255, 255, 255, 0.18) !important; }
+.info-box-overlay .stat-cell { border-color: rgba(255, 255, 255, 0.18) !important; }
+.info-box-overlay .stat-cell + .stat-cell::before { background: rgba(255, 255, 255, 0.18); }
+.info-box-overlay .stat-icon { color: rgba(255, 245, 230, 0.95); }
+.info-box-overlay .stat-label { color: rgba(255, 245, 230, 0.95); text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5); }
+.info-box-overlay .stat-value { color: rgba(255, 245, 230, 0.78); text-shadow: 0 1px 2px rgba(0, 0, 0, 0.4); }
+.info-box-overlay .stat-value .slash { color: rgba(255, 255, 255, 0.4); }
+
 /* Stat grid */
 .stat-grid {
   display: grid;
@@ -940,6 +965,7 @@ html, body {
   height: 100%;
   background: var(--paper);
 }
+.map-canvas img.map-base { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; border-radius: 2px; }
 .map-canvas svg.terrain { position: absolute; inset: 0; width: 100%; height: 100%; }
 .map-pins-layer { position: absolute; inset: 0; }
 .map-route { stroke: var(--red); stroke-width: 2; fill: none; stroke-linejoin: round; stroke-linecap: round; }
