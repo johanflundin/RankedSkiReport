@@ -5,12 +5,12 @@ import { useWhistlerHover } from './HoverContext';
 type Pin = { n: number; x: number; y: number; label: string; alt: string; align: 'left' | 'right' };
 
 const PINS: Pin[] = [
-  { n: 1, x: 78, y: 26, label: 'Symphony Bowl',       alt: '(Ski first)', align: 'right' },
-  { n: 2, x: 56, y: 47, label: 'Crystal Hut',          alt: '(Lunch)',     align: 'left'  },
-  { n: 3, x: 16, y: 36, label: 'Spearhead Traverse',   alt: '',            align: 'right' },
-  { n: 4, x: 71, y: 84, label: "Après — Dusty's",     alt: '',            align: 'left'  },
-  { n: 5, x: 50, y: 88, label: 'Dinner — Sidecut',     alt: '',            align: 'right' },
-  { n: 6, x: 86, y: 92, label: 'Peak 2 Peak ride',     alt: '',            align: 'left'  },
+  { n: 1, x: 72, y: 18, label: 'Symphony Bowl',       alt: '(Ski first)', align: 'right' },
+  { n: 2, x: 30, y: 34, label: 'Crystal Hut',          alt: '(Lunch)',     align: 'left'  },
+  { n: 3, x: 16, y: 18, label: 'Spearhead Traverse',   alt: '',            align: 'right' },
+  { n: 4, x: 78, y: 68, label: "Après — Dusty's",     alt: '',            align: 'left'  },
+  { n: 5, x: 60, y: 80, label: 'Dinner — Sidecut',     alt: '',            align: 'right' },
+  { n: 6, x: 48, y: 24, label: 'Peak 2 Peak ride',     alt: '',            align: 'left'  },
 ];
 
 export function WhistlerPage5() {
@@ -34,10 +34,10 @@ export function WhistlerPage5() {
           draggable={false}
         />
         <svg className="terrain" viewBox="0 0 600 600" preserveAspectRatio="none">
-          <text x="120" y="55" fontSize="11" fontWeight="700" fill="#fefdf9" stroke="#1c1815" strokeWidth=".4" paintOrder="stroke" style={{ fontVariantCaps: 'all-small-caps', letterSpacing: '.12em' }}>BLACKCOMB</text>
-          <text x="120" y="72" fontSize="9" fontStyle="italic" fill="#fefdf9" stroke="#1c1815" strokeWidth=".3" paintOrder="stroke">2,440 m / 8,000 ft</text>
-          <text x="380" y="55" fontSize="11" fontWeight="700" fill="#fefdf9" stroke="#1c1815" strokeWidth=".4" paintOrder="stroke" style={{ fontVariantCaps: 'all-small-caps', letterSpacing: '.12em' }}>WHISTLER</text>
-          <text x="380" y="72" fontSize="9" fontStyle="italic" fill="#fefdf9" stroke="#1c1815" strokeWidth=".3" paintOrder="stroke">2,182 m / 7,160 ft</text>
+          <text x="120" y="55" fontSize="12" fontWeight="700" fill="#fefdf9" stroke="#1c1815" strokeWidth="2.2" paintOrder="stroke" strokeLinejoin="round" style={{ fontVariantCaps: 'all-small-caps', letterSpacing: '.12em' }}>BLACKCOMB</text>
+          <text x="120" y="72" fontSize="9.5" fontStyle="italic" fill="#fefdf9" stroke="#1c1815" strokeWidth="1.6" paintOrder="stroke" strokeLinejoin="round">2,440 m / 8,000 ft</text>
+          <text x="380" y="55" fontSize="12" fontWeight="700" fill="#fefdf9" stroke="#1c1815" strokeWidth="2.2" paintOrder="stroke" strokeLinejoin="round" style={{ fontVariantCaps: 'all-small-caps', letterSpacing: '.12em' }}>WHISTLER</text>
+          <text x="380" y="72" fontSize="9.5" fontStyle="italic" fill="#fefdf9" stroke="#1c1815" strokeWidth="1.6" paintOrder="stroke" strokeLinejoin="round">2,182 m / 7,160 ft</text>
 
           <path className="map-lift" d="M460 510 L380 90" />
           <path className="map-lift" d="M380 510 L160 70" />
@@ -46,14 +46,14 @@ export function WhistlerPage5() {
           <path className="map-lift" d="M340 130 L260 150" />
           <path className="map-lift" d="M120 110 L60 270" />
 
-          <path d="M160 70 L380 90" stroke="#fefdf9" strokeWidth="1.4" strokeDasharray="6 4" fill="none" />
-          <text x="240" y="62" fontSize="9" fill="#fefdf9" stroke="#1c1815" strokeWidth=".3" paintOrder="stroke" style={{ fontVariantCaps: 'all-small-caps', letterSpacing: '.14em', fontWeight: 700 }}>PEAK 2 PEAK</text>
+          <path d="M160 70 L380 90" stroke="#fefdf9" strokeWidth="2" strokeDasharray="6 4" fill="none" />
+          <text x="240" y="62" fontSize="10" fill="#fefdf9" stroke="#1c1815" strokeWidth="1.8" paintOrder="stroke" strokeLinejoin="round" style={{ fontVariantCaps: 'all-small-caps', letterSpacing: '.14em', fontWeight: 700 }}>PEAK 2 PEAK</text>
 
-          <text x="50"  y="200" fontSize="9.5" fill="#fefdf9" stroke="#1c1815" strokeWidth=".3" paintOrder="stroke" style={{ fontVariantCaps: 'all-small-caps', letterSpacing: '.12em', fontWeight: 700 }}>GLACIER BOWL</text>
-          <text x="180" y="240" fontSize="9.5" fill="#fefdf9" stroke="#1c1815" strokeWidth=".3" paintOrder="stroke" style={{ fontVariantCaps: 'all-small-caps', letterSpacing: '.12em', fontWeight: 700 }}>7TH HEAVEN</text>
-          <text x="420" y="160" fontSize="9.5" fill="#fefdf9" stroke="#1c1815" strokeWidth=".3" paintOrder="stroke" style={{ fontVariantCaps: 'all-small-caps', letterSpacing: '.12em', fontWeight: 700 }}>SOLAR COASTER</text>
-          <text x="500" y="240" fontSize="9.5" fill="#fefdf9" stroke="#1c1815" strokeWidth=".3" paintOrder="stroke" style={{ fontVariantCaps: 'all-small-caps', letterSpacing: '.12em', fontWeight: 700 }}>HARMONY</text>
-          <text x="430" y="475" fontSize="9.5" fill="#fefdf9" stroke="#1c1815" strokeWidth=".3" paintOrder="stroke" style={{ fontVariantCaps: 'all-small-caps', letterSpacing: '.12em', fontWeight: 700 }}>EXCALIBUR</text>
+          <text x="50"  y="200" fontSize="10" fill="#fefdf9" stroke="#1c1815" strokeWidth="1.8" paintOrder="stroke" strokeLinejoin="round" style={{ fontVariantCaps: 'all-small-caps', letterSpacing: '.12em', fontWeight: 700 }}>GLACIER BOWL</text>
+          <text x="180" y="240" fontSize="10" fill="#fefdf9" stroke="#1c1815" strokeWidth="1.8" paintOrder="stroke" strokeLinejoin="round" style={{ fontVariantCaps: 'all-small-caps', letterSpacing: '.12em', fontWeight: 700 }}>7TH HEAVEN</text>
+          <text x="420" y="160" fontSize="10" fill="#fefdf9" stroke="#1c1815" strokeWidth="1.8" paintOrder="stroke" strokeLinejoin="round" style={{ fontVariantCaps: 'all-small-caps', letterSpacing: '.12em', fontWeight: 700 }}>SOLAR COASTER</text>
+          <text x="500" y="240" fontSize="10" fill="#fefdf9" stroke="#1c1815" strokeWidth="1.8" paintOrder="stroke" strokeLinejoin="round" style={{ fontVariantCaps: 'all-small-caps', letterSpacing: '.12em', fontWeight: 700 }}>HARMONY</text>
+          <text x="430" y="475" fontSize="10" fill="#fefdf9" stroke="#1c1815" strokeWidth="1.8" paintOrder="stroke" strokeLinejoin="round" style={{ fontVariantCaps: 'all-small-caps', letterSpacing: '.12em', fontWeight: 700 }}>EXCALIBUR</text>
 
           <path
             className="map-route"
@@ -95,12 +95,6 @@ export function WhistlerPage5() {
           ))}
         </div>
 
-        <div className="legend">
-          <div className="legend-title">Legend</div>
-          <div className="legend-row"><span className="legend-swatch"></span><span>Recommended route</span></div>
-          <div className="legend-row"><span className="legend-swatch lift"></span><span>Lifts</span></div>
-          <div className="legend-row"><span className="legend-swatch dot"></span><span>Hit List references</span></div>
-        </div>
       </div>
 
       <div className="caption" style={{ marginTop: 10, lineHeight: 1.5 }}>

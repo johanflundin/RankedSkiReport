@@ -210,10 +210,15 @@ function FaunaItem({ slug, name, hint, children }: { slug: string; name: string;
   );
 }
 
-function WitnessItem({ icon, text }: { icon: string; text: ReactNode }) {
+function WitnessItem({ slug, text }: { slug: string; text: ReactNode }) {
   return (
     <div className="witness-item">
-      <div className="witness-icon" style={{ fontSize: 18 }}>{icon}</div>
+      <Illustration
+        src={`/assets/whistler/spotted-${slug}.jpg`}
+        hint=" "
+        className="illo-circle"
+        style={{ width: 42, height: 42 }}
+      />
       <div className="witness-text">{text}</div>
     </div>
   );
@@ -265,10 +270,10 @@ export function WhistlerPage4() {
           <div className="hr-dot" style={{ marginTop: 12 }}></div>
 
           <div className="witness-list">
-            <WitnessItem icon="🩹" text="Two locals bragging about lift-line cuts at 7th Heaven; found ten minutes later sitting next to a rock with what was almost certainly a fractured tibia. The mountain has its own justice system." />
-            <WitnessItem icon="⛷" text="A father at the Excalibur queue carrying his crying son's skis, his crying son's poles, his crying son's boots, and the crying son. Six minutes from the lodge." />
-            <WitnessItem icon="🍕" text={<>A man teaching his wife to ski using only the phrase <em>"pizza, French fry, pizza, French fry"</em> for forty-five uninterrupted minutes.</>} />
-            <WitnessItem icon="🧇" text={<>A snowboarder in the Crystal Hut line, in complete earnest, complaining that the waffle was "too sweet."</>} />
+            <WitnessItem slug="tibia" text="Two locals bragging about lift-line cuts at 7th Heaven; found ten minutes later sitting next to a rock with what was almost certainly a fractured tibia. The mountain has its own justice system." />
+            <WitnessItem slug="overloaded" text="A father at the Excalibur queue carrying his crying son's skis, his crying son's poles, his crying son's boots, and the crying son. Six minutes from the lodge." />
+            <WitnessItem slug="pizza" text={<>A man teaching his wife to ski using only the phrase <em>"pizza, French fry, pizza, French fry"</em> for forty-five uninterrupted minutes.</>} />
+            <WitnessItem slug="waffle" text={<>A snowboarder in the Crystal Hut line, in complete earnest, complaining that the waffle was "too sweet."</>} />
           </div>
         </div>
       </div>

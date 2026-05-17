@@ -519,17 +519,17 @@ html, body {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, rgba(15, 25, 45, 0.55) 0%, rgba(15, 25, 45, 0.78) 100%);
+  background: linear-gradient(180deg, rgba(15, 25, 45, 0.22) 0%, rgba(15, 25, 45, 0.40) 100%);
   pointer-events: none;
 }
 .info-box-overlay > * { position: relative; }
-.info-box-overlay .stat-grid { border-color: rgba(255, 255, 255, 0.18) !important; }
-.info-box-overlay .stat-cell { border-color: rgba(255, 255, 255, 0.18) !important; }
-.info-box-overlay .stat-cell + .stat-cell::before { background: rgba(255, 255, 255, 0.18); }
-.info-box-overlay .stat-icon { color: rgba(255, 245, 230, 0.95); }
-.info-box-overlay .stat-label { color: rgba(255, 245, 230, 0.95); text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5); }
-.info-box-overlay .stat-value { color: rgba(255, 245, 230, 0.78); text-shadow: 0 1px 2px rgba(0, 0, 0, 0.4); }
-.info-box-overlay .stat-value .slash { color: rgba(255, 255, 255, 0.4); }
+.info-box-overlay .stat-grid { border-color: rgba(255, 255, 255, 0.22) !important; }
+.info-box-overlay .stat-cell { border-color: rgba(255, 255, 255, 0.22) !important; }
+.info-box-overlay .stat-cell + .stat-cell::before { background: rgba(255, 255, 255, 0.22); }
+.info-box-overlay .stat-icon { color: rgba(255, 248, 232, 1); filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.6)); }
+.info-box-overlay .stat-label { color: rgba(255, 248, 232, 1); text-shadow: 0 1px 3px rgba(0, 0, 0, 0.7); }
+.info-box-overlay .stat-value { color: rgba(255, 248, 232, 0.92); text-shadow: 0 1px 3px rgba(0, 0, 0, 0.7); }
+.info-box-overlay .stat-value .slash { color: rgba(255, 255, 255, 0.55); }
 
 /* Stat grid */
 .stat-grid {
@@ -601,15 +601,6 @@ html, body {
 /* Witness */
 .witness-list { display: flex; flex-direction: column; gap: 18px; }
 .witness-item { display: grid; grid-template-columns: 42px 1fr; gap: 12px; align-items: start; }
-.witness-icon {
-  width: 42px; height: 42px;
-  display: flex; align-items: center; justify-content: center;
-  border: 1px solid var(--rule);
-  border-radius: 3px;
-  overflow: hidden;
-  background: var(--paper-edge);
-  font-size: 20px;
-}
 .witness-text { font-size: 12.5px; line-height: 1.5; color: var(--ink); }
 
 /* Hit list */
