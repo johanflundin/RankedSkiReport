@@ -13,5 +13,6 @@ export type Resort = {
 };
 
 export type SpreadEntry =
+  | { kind: 'closed' }
   | { kind: 'toc' }
   | { kind: 'entry'; resortIdx: number; spreadIdx: 0 | 1 | 2 };

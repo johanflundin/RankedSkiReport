@@ -23,7 +23,7 @@ export function TocLeftPage() {
             color: 'var(--ink-soft)',
           }}
         >
-          to twenty mountains.
+          Twenty mountains.
         </div>
         <div style={{ marginTop: 16 }}>
           <div className="toc-illo">

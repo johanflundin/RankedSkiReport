@@ -11,6 +11,7 @@ import { Backdrop } from './ui/Backdrop';
 import { Sidebar } from './ui/Sidebar';
 import { BookSpread } from './book/BookSpread';
 import { SpreadFader } from './book/SpreadFader';
+import { ClosedBook } from './spreads/ClosedBook';
 import { TocLeftPage, TocRightPage } from './spreads/Toc';
 import { getShellSpreads } from './spreads/Shell';
 import { WhistlerProvider, getWhistlerSpreads } from './spreads/whistler';
@@ -27,8 +28,17 @@ type Flipping = {
   key: number;
 } | null;
 
+type ViewParts =
+  | { kind: 'closed'; node: ReactNode }
+  | {
+      kind: 'spread';
+      left: ReactNode;
+      right: ReactNode;
+      provider: ComponentType<{ children: ReactNode }> | null;
+    };
+
 function buildSpreadOrder(resorts: Resort[]): SpreadEntry[] {
-  const order: SpreadEntry[] = [{ kind: 'toc' }];
+  const order: SpreadEntry[] = [{ kind: 'closed' }, { kind: 'toc' }];
   resorts.forEach((r, i) => {
     if (!r.forthcoming) {
       for (let s = 0; s < SPREADS_PER_ENTRY; s++) {
@@ -38,6 +48,8 @@ function buildSpreadOrder(resorts: Resort[]): SpreadEntry[] {
   });
   return order;
 }
+
+const TOC_GLOBAL_IDX = 1;
 
 export function App() {
   const resorts = RESORTS;
@@ -53,8 +65,9 @@ export function App() {
   const [mouseY, setMouseY] = useState(0.5);
 
   const current = order[globalIdx];
-  const isToc = current.kind === 'toc';
-  const currentResort = isToc ? null : resorts[current.resortIdx];
+  const isClosed = current.kind === 'closed';
+  const isEntry = current.kind === 'entry';
+  const currentResort = isEntry ? resorts[current.resortIdx] : null;
 
   /* Auto-scale */
   useEffect(() => {
@@ -85,14 +98,21 @@ export function App() {
 
   /* Forward ref to jumpToResort for use inside getSpreadParts */
   const jumpToResortRef = useRef<(idx: number) => void>(() => {});
+  const nextRef = useRef<() => void>(() => {});
 
-  /* Build {left, right, Provider} React nodes for any global index. */
   const getSpreadParts = useCallback(
-    (idx: number): { left: ReactNode; right: ReactNode; provider: ComponentType<{ children: ReactNode }> | null } | null => {
+    (idx: number): ViewParts | null => {
       const o = order[idx];
       if (!o) return null;
+      if (o.kind === 'closed') {
+        return {
+          kind: 'closed',
+          node: <ClosedBook onOpen={() => nextRef.current()} />,
+        };
+      }
       if (o.kind === 'toc') {
         return {
+          kind: 'spread',
           left: <TocLeftPage />,
           right: <TocRightPage onSelect={(i: number) => jumpToResortRef.current(i)} />,
           provider: null,
@@ -101,10 +121,10 @@ export function App() {
       const r = resorts[o.resortIdx];
       if (r.full && r.slug === 'whistler') {
         const sp = getWhistlerSpreads()[o.spreadIdx];
-        return { left: sp.left, right: sp.right, provider: WhistlerProvider };
+        return { kind: 'spread', left: sp.left, right: sp.right, provider: WhistlerProvider };
       }
       const sp = getShellSpreads(r, o.resortIdx + 1)[o.spreadIdx];
-      return { left: sp.left, right: sp.right, provider: null };
+      return { kind: 'spread', left: sp.left, right: sp.right, provider: null };
     },
     [order, resorts],
   );
@@ -128,6 +148,7 @@ export function App() {
 
   const next = useCallback(() => flipTo(globalIdx + 1, 'forward'), [globalIdx, flipTo]);
   const prev = useCallback(() => flipTo(globalIdx - 1, 'backward'), [globalIdx, flipTo]);
+  nextRef.current = next;
 
   const jumpToResort = useCallback(
     (resortIdx: number) => {
@@ -141,18 +162,21 @@ export function App() {
   );
   jumpToResortRef.current = jumpToResort;
 
-  const jumpToToc = useCallback(() => flipTo(0, 'backward'), [flipTo]);
+  const jumpToToc = useCallback(
+    () => flipTo(TOC_GLOBAL_IDX, TOC_GLOBAL_IDX > globalIdx ? 'forward' : 'backward'),
+    [flipTo, globalIdx],
+  );
 
   const jumpToSpreadInEntry = useCallback(
     (spreadIdx: 0 | 1 | 2) => {
-      if (isToc || current.kind !== 'entry') return;
+      if (!isEntry || current.kind !== 'entry') return;
       const target = order.findIndex(
         o => o.kind === 'entry' && o.resortIdx === current.resortIdx && o.spreadIdx === spreadIdx,
       );
       if (target < 0 || target === globalIdx) return;
       flipTo(target, target > globalIdx ? 'forward' : 'backward');
     },
-    [order, isToc, current, globalIdx, flipTo],
+    [order, isEntry, current, globalIdx, flipTo],
   );
 
   /* Keyboard */
@@ -166,28 +190,32 @@ export function App() {
     return () => window.removeEventListener('keydown', onKey);
   }, [next, prev, jumpToToc]);
 
-  const newParts = getSpreadParts(globalIdx)!;
-  const wrapInProvider = (Provider: ComponentType<{ children: ReactNode }> | null, node: ReactNode) =>
-    Provider ? <Provider>{node}</Provider> : node;
+  const renderContent = (parts: ViewParts): ReactNode => {
+    if (parts.kind === 'closed') return parts.node;
+    return <BookSpread left={parts.left} right={parts.right} />;
+  };
+  const wrapInProvider = (
+    Provider: ComponentType<{ children: ReactNode }> | null,
+    node: ReactNode,
+  ) => (Provider ? <Provider>{node}</Provider> : node);
 
-  const newSpreadEl = wrapInProvider(
-    newParts.provider,
-    <BookSpread left={newParts.left} right={newParts.right} />,
-  );
+  const newParts = getSpreadParts(globalIdx)!;
+  const newProvider = newParts.kind === 'spread' ? newParts.provider : null;
+  const newSpreadEl = wrapInProvider(newProvider, renderContent(newParts));
 
   let oldSpreadEl: ReactNode = null;
   if (flipping) {
     const oldParts = getSpreadParts(flipping.fromIdx);
     if (oldParts) {
-      oldSpreadEl = wrapInProvider(
-        oldParts.provider,
-        <BookSpread left={oldParts.left} right={oldParts.right} />,
-      );
+      const oldProvider = oldParts.kind === 'spread' ? oldParts.provider : null;
+      oldSpreadEl = wrapInProvider(oldProvider, renderContent(oldParts));
     }
   }
 
-  const view: 'toc' | 'entry' = isToc ? 'toc' : 'entry';
-  const currentIdx = isToc || current.kind !== 'entry' ? -1 : current.resortIdx;
+  const view: 'closed' | 'toc' | 'entry' = isClosed ? 'closed' : isEntry ? 'entry' : 'toc';
+  const sidebarView: 'toc' | 'entry' = isEntry ? 'entry' : 'toc';
+  const currentIdx = isEntry && current.kind === 'entry' ? current.resortIdx : -1;
+  const bookShellClass = isClosed ? 'book-shell book-shell-closed' : 'book-shell';
 
   return (
     <>
@@ -195,7 +223,7 @@ export function App() {
       <div className="app">
         <Sidebar
           resorts={resorts}
-          view={view}
+          view={sidebarView}
           currentIdx={currentIdx}
           onPickToc={jumpToToc}
           onPick={jumpToResort}
@@ -244,7 +272,7 @@ export function App() {
           )}
 
           <div className="stage-inner" style={{ transform: `scale(${scale})` }}>
-            <div className="book-shell">
+            <div className={bookShellClass}>
               {newSpreadEl}
               <SpreadFader
                 flipKey={flipping ? flipping.key : 0}
