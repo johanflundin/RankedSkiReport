@@ -19,11 +19,11 @@ export function WhistlerPage5() {
   return (
     <Page side="left" runningHead="Whistler Blackcomb • The Map" folio="5">
       <div className="body-text" style={{ marginTop: 4, marginBottom: 10, textAlign: 'left', fontSize: 13 }}>
-        The route in red is the{' '}
+        The{' '}
         <em style={{ color: 'var(--red)', fontWeight: 600 }}>
           Hit List's <span style={{ fontVariantCaps: 'all-small-caps', letterSpacing: '.1em' }}>ski here first</span>
-        </em>
-        : Excalibur Gondola → Solar Coaster → Symphony Bowl, and back down before anyone else has caught up.
+        </em>{' '}
+        goes Excalibur Gondola → Solar Coaster → Symphony Bowl, and back down before anyone else has caught up.
       </div>
 
       <div className="map-canvas" style={{ flex: 1, position: 'relative' }}>
@@ -54,16 +54,6 @@ export function WhistlerPage5() {
           <text x="420" y="160" fontSize="10" fill="#fefdf9" stroke="#1c1815" strokeWidth="1.8" paintOrder="stroke" strokeLinejoin="round" style={{ fontVariantCaps: 'all-small-caps', letterSpacing: '.12em', fontWeight: 700 }}>SOLAR COASTER</text>
           <text x="500" y="240" fontSize="10" fill="#fefdf9" stroke="#1c1815" strokeWidth="1.8" paintOrder="stroke" strokeLinejoin="round" style={{ fontVariantCaps: 'all-small-caps', letterSpacing: '.12em', fontWeight: 700 }}>HARMONY</text>
           <text x="430" y="475" fontSize="10" fill="#fefdf9" stroke="#1c1815" strokeWidth="1.8" paintOrder="stroke" strokeLinejoin="round" style={{ fontVariantCaps: 'all-small-caps', letterSpacing: '.12em', fontWeight: 700 }}>EXCALIBUR</text>
-
-          <path
-            className="map-route"
-            d="M460 530
-               C 460 480, 420 360, 380 90
-               C 380 90, 340 80, 160 70
-               C 160 70, 110 90, 80 160
-               C 80 160, 200 320, 280 460
-               C 280 460, 360 480, 430 510"
-          />
         </svg>
 
         <div className="map-pins-layer">
@@ -98,8 +88,7 @@ export function WhistlerPage5() {
       </div>
 
       <div className="caption" style={{ marginTop: 10, lineHeight: 1.5 }}>
-        Numbered points correspond to <em>The Hit List</em> on the next page.<br />
-        The recommended route is for clear-weather mornings; in storm, ski lower.
+        Numbered points correspond to <em>The Hit List</em> on the next page.
       </div>
     </Page>
   );
