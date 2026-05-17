@@ -598,10 +598,22 @@ html, body {
   color: var(--ink);
 }
 
-/* Witness */
-.witness-list { display: flex; flex-direction: column; gap: 18px; }
-.witness-item { display: grid; grid-template-columns: 42px 1fr; gap: 12px; align-items: start; }
-.witness-text { font-size: 12.5px; line-height: 1.5; color: var(--ink); }
+/* Witness — mirrors Fauna styling */
+.witness-list { display: flex; flex-direction: column; gap: 20px; }
+.witness-item { display: grid; grid-template-columns: 80px 1fr; gap: 16px; align-items: start; }
+.witness-name {
+  font-variant-caps: all-small-caps;
+  letter-spacing: .14em;
+  font-weight: 700;
+  color: var(--red);
+  font-size: 13px;
+  margin: 0 0 5px;
+}
+.witness-desc {
+  font-size: 13px;
+  line-height: 1.45;
+  color: var(--ink);
+}
 
 /* Hit list */
 .hit-list { display: flex; flex-direction: column; gap: 18px; margin-top: 20px; }

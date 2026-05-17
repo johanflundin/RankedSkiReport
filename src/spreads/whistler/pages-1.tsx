@@ -210,16 +210,19 @@ function FaunaItem({ slug, name, hint, children }: { slug: string; name: string;
   );
 }
 
-function WitnessItem({ slug, text }: { slug: string; text: ReactNode }) {
+function WitnessItem({ slug, title, children }: { slug: string; title: string; children: ReactNode }) {
   return (
     <div className="witness-item">
       <Illustration
         src={`/assets/whistler/spotted-${slug}.jpg`}
         hint=" "
         className="illo-circle"
-        style={{ width: 42, height: 42 }}
+        style={{ width: 80, height: 80 }}
       />
-      <div className="witness-text">{text}</div>
+      <div>
+        <div className="witness-name">{title}</div>
+        <div className="witness-desc">{children}</div>
+      </div>
     </div>
   );
 }
@@ -227,7 +230,7 @@ function WitnessItem({ slug, text }: { slug: string; text: ReactNode }) {
 export function WhistlerPage4() {
   return (
     <Page side="right" runningHead="Whistler Blackcomb" folio="4">
-      <div style={{ display: 'grid', gridTemplateColumns: '1.05fr 0.95fr', gap: 28, marginTop: 16, height: '100%' }}>
+      <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 28, marginTop: 16, height: '100%' }}>
         <div>
           <div className="eyebrow" style={{ color: 'var(--ink)', fontSize: 10 }}>Field Guide To</div>
           <h2
@@ -263,17 +266,29 @@ export function WhistlerPage4() {
           </div>
         </div>
 
-        <div style={{ borderLeft: '1px solid var(--rule)', paddingLeft: 24 }}>
-          <div className="eyebrow" style={{ color: 'var(--ink)', fontSize: 9.5 }}>
-            Spotted, Overheard, or<br />Otherwise Witnessed
-          </div>
-          <div className="hr-dot" style={{ marginTop: 12 }}></div>
+        <div>
+          <div className="eyebrow" style={{ color: 'var(--ink)', fontSize: 10 }}>Spotted, Overheard, or Otherwise Witnessed</div>
+          <h2
+            className="title-m"
+            style={{ marginTop: 6, color: 'var(--red)', fontVariantCaps: 'all-small-caps', letterSpacing: '.05em' }}
+          >
+            The Sightings
+          </h2>
+          <div className="hr-dot"></div>
 
           <div className="witness-list">
-            <WitnessItem slug="tibia" text="Two locals bragging about lift-line cuts at 7th Heaven; found ten minutes later sitting next to a rock with what was almost certainly a fractured tibia. The mountain has its own justice system." />
-            <WitnessItem slug="overloaded" text="A father at the Excalibur queue carrying his crying son's skis, his crying son's poles, his crying son's boots, and the crying son. Six minutes from the lodge." />
-            <WitnessItem slug="pizza" text={<>A man teaching his wife to ski using only the phrase <em>"pizza, French fry, pizza, French fry"</em> for forty-five uninterrupted minutes.</>} />
-            <WitnessItem slug="waffle" text={<>A snowboarder in the Crystal Hut line, in complete earnest, complaining that the waffle was "too sweet."</>} />
+            <WitnessItem slug="tibia" title="The Mountain's Justice">
+              Two locals bragging about lift-line cuts at 7th Heaven; found ten minutes later sitting next to a rock with what was almost certainly a fractured tibia.
+            </WitnessItem>
+            <WitnessItem slug="overloaded" title="The Pack Mule">
+              A father at the Excalibur queue carrying his crying son's skis, his crying son's poles, his crying son's boots, and the crying son. Six minutes from the lodge.
+            </WitnessItem>
+            <WitnessItem slug="pizza" title="Pizza, French Fry">
+              A man teaching his wife to ski using only the phrase <em>"pizza, French fry, pizza, French fry"</em> for forty-five uninterrupted minutes.
+            </WitnessItem>
+            <WitnessItem slug="waffle" title="Too Sweet">
+              A snowboarder in the Crystal Hut line, in complete earnest, complaining that the waffle was "too sweet."
+            </WitnessItem>
           </div>
         </div>
       </div>
