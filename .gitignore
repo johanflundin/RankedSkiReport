@@ -12,6 +12,7 @@ dist-ssr
 .vercel
 inspiration/
 legacy/
+briefs/
 .venv/
 __pycache__/
 *.pyc
