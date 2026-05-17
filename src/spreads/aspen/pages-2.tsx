@@ -54,14 +54,6 @@ export function AspenPage5() {
           <path className="map-lift" d="M520 500 L520 180" />
 
           <text x="305" y="520" fontSize="10" fill="#fefdf9" stroke="#1c1815" strokeWidth="1.8" paintOrder="stroke" strokeLinejoin="round" style={{ fontVariantCaps: 'all-small-caps', letterSpacing: '.14em', fontWeight: 700 }}>ASPEN VILLAGE</text>
-
-          <path
-            className="map-route"
-            d="M490 540
-               C 490 480, 470 360, 460 180
-               C 460 160, 470 130, 490 130
-               C 490 130, 500 145, 510 160"
-          />
         </svg>
 
         <div className="map-pins-layer">
@@ -95,8 +87,7 @@ export function AspenPage5() {
       </div>
 
       <div className="caption" style={{ marginTop: 10, lineHeight: 1.5 }}>
-        Numbered points correspond to <em>The Hit List</em> on the next page.<br />
-        The red route is the Highland Bowl bootpack — clear-weather only.
+        Numbered points correspond to <em>The Hit List</em> on the next page.
       </div>
     </Page>
   );
