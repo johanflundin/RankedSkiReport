@@ -46,7 +46,6 @@ export function WhistlerPage5() {
           <path className="map-lift" d="M340 130 L260 150" />
           <path className="map-lift" d="M120 110 L60 270" />
 
-          <path d="M160 70 L380 90" stroke="#fefdf9" strokeWidth="2" strokeDasharray="6 4" fill="none" />
           <text x="240" y="62" fontSize="10" fill="#fefdf9" stroke="#1c1815" strokeWidth="1.8" paintOrder="stroke" strokeLinejoin="round" style={{ fontVariantCaps: 'all-small-caps', letterSpacing: '.14em', fontWeight: 700 }}>PEAK 2 PEAK</text>
 
           <text x="50"  y="200" fontSize="10" fill="#fefdf9" stroke="#1c1815" strokeWidth="1.8" paintOrder="stroke" strokeLinejoin="round" style={{ fontVariantCaps: 'all-small-caps', letterSpacing: '.12em', fontWeight: 700 }}>GLACIER BOWL</text>
