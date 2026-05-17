@@ -3,7 +3,7 @@ import type { Resort } from './types';
 export const RESORTS: Resort[] = [
   { slug: 'killington', name: 'Killington',         location: 'Vermont, USA',             country: 'usa',     region: 'North America', visited: 'Feb 2024', age: 'three' },
   { slug: 'stratton',   name: 'Stratton',           location: 'Vermont, USA',             country: 'usa',     region: 'North America', visited: 'Mar 2024', age: 'three' },
-  { slug: 'aspen',      name: 'Aspen',              location: 'Colorado, USA',            country: 'usa',     region: 'North America', visited: 'Dec 2024', age: 'four' },
+  { slug: 'aspen',      name: 'Aspen',              location: 'Colorado, USA',            country: 'usa',     region: 'North America', visited: 'Dec 2024', age: 'four', full: true },
   { slug: 'mammoth',    name: 'Mammoth',            location: 'California, USA',          country: 'usa',     region: 'North America', visited: 'Jan 2025', age: 'four' },
   { slug: 'jackson',    name: 'Jackson Hole',       location: 'Wyoming, USA',             country: 'usa',     region: 'North America', visited: 'Feb 2025', age: 'four' },
   { slug: 'whistler',   name: 'Whistler Blackcomb', location: 'British Columbia, Canada', country: 'canada',  region: 'North America', visited: 'Mar 2026', age: 'five', full: true },

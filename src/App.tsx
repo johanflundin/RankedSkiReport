@@ -15,6 +15,7 @@ import { ClosedBook } from './spreads/ClosedBook';
 import { TocLeftPage, TocRightPage } from './spreads/Toc';
 import { getShellSpreads } from './spreads/Shell';
 import { WhistlerProvider, getWhistlerSpreads } from './spreads/whistler';
+import { AspenProvider, getAspenSpreads } from './spreads/aspen';
 import { RESORTS } from './data/resorts';
 import type { Resort, SpreadEntry } from './data/types';
 
@@ -122,6 +123,10 @@ export function App() {
       if (r.full && r.slug === 'whistler') {
         const sp = getWhistlerSpreads()[o.spreadIdx];
         return { kind: 'spread', left: sp.left, right: sp.right, provider: WhistlerProvider };
+      }
+      if (r.full && r.slug === 'aspen') {
+        const sp = getAspenSpreads()[o.spreadIdx];
+        return { kind: 'spread', left: sp.left, right: sp.right, provider: AspenProvider };
       }
       const sp = getShellSpreads(r, o.resortIdx + 1)[o.spreadIdx];
       return { kind: 'spread', left: sp.left, right: sp.right, provider: null };
