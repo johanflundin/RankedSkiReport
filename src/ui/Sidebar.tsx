@@ -11,8 +11,8 @@ type Props = {
 export function Sidebar({ resorts, view, currentIdx, onPickToc, onPick }: Props) {
   return (
     <nav className="sidebar">
-      <div className="sidebar-title">Twenty<br />Mountains</div>
-      <div className="sidebar-sub">A father's field guide</div>
+      <div className="sidebar-title">Ranked.</div>
+      <div className="sidebar-sub">A father's field guide to twenty mountains</div>
 
       <div className="sidebar-eyebrow" onClick={onPickToc} style={{ cursor: 'pointer' }}>
         Contents

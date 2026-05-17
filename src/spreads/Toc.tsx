@@ -9,10 +9,22 @@ export function TocLeftPage() {
     <Page side="left">
       <div className="toc-cover-inner">
         <div className="toc-cover-eyebrow">A Father's Field Guide</div>
-        <h1 className="toc-title">
-          Twenty<br />
-          <em>Mountains</em>.
-        </h1>
+        <h1 className="toc-title">Ranked.</h1>
+        <div
+          style={{
+            fontFamily: 'var(--display)',
+            fontStyle: 'italic',
+            fontWeight: 500,
+            fontSize: 34,
+            lineHeight: 1,
+            letterSpacing: '-.005em',
+            marginTop: 6,
+            paddingLeft: 4,
+            color: 'var(--ink-soft)',
+          }}
+        >
+          to twenty mountains.
+        </div>
         <div style={{ marginTop: 16 }}>
           <div className="toc-illo">
             <Illustration
