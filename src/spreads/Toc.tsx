@@ -1,5 +1,4 @@
 import { Page } from '../book/Page';
-import { Illustration } from '../book/Illustration';
 import { RESORTS } from '../data/resorts';
 
 type SelectFn = (resortIdx: number) => void;
@@ -7,40 +6,69 @@ type SelectFn = (resortIdx: number) => void;
 export function TocLeftPage() {
   return (
     <Page side="left">
-      <div className="toc-cover-inner">
-        <div className="toc-cover-eyebrow">A Father's Field Guide</div>
-        <h1 className="toc-title">Ranked.</h1>
+      <div
+        style={{
+          position: 'absolute',
+          inset: 0,
+          padding: '90px 70px 80px',
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+          justifyContent: 'center',
+          textAlign: 'center',
+        }}
+      >
+        <h1
+          style={{
+            fontFamily: 'var(--display)',
+            fontWeight: 700,
+            fontSize: 56,
+            lineHeight: 1,
+            letterSpacing: '-.02em',
+            color: 'var(--ink)',
+            margin: 0,
+          }}
+        >
+          Ranked.
+        </h1>
         <div
           style={{
             fontFamily: 'var(--display)',
             fontStyle: 'italic',
             fontWeight: 500,
-            fontSize: 34,
+            fontSize: 24,
             lineHeight: 1,
             letterSpacing: '-.005em',
-            marginTop: 6,
-            paddingLeft: 4,
+            marginTop: 10,
             color: 'var(--ink-soft)',
           }}
         >
           Twenty mountains.
         </div>
-        <div style={{ marginTop: 16 }}>
-          <div className="toc-illo">
-            <Illustration
-              src="/assets/cover.jpg"
-              hint="Cover watercolor — a mountain, or the two of you on skis"
-              style={{ width: '100%', height: '100%' }}
-            />
-          </div>
-        </div>
-        <p className="toc-deck">
-          A field guide to the ski resorts you and I have skied together,
-          in the order we skied them, written down before either of us forgets.
-        </p>
-        <div className="toc-author">
-          <div><span className="by">By</span> Your Father</div>
-          <div className="for">For you, who will outski me by ten.</div>
+
+        <div
+          aria-hidden="true"
+          style={{
+            width: 6,
+            height: 6,
+            background: 'var(--red)',
+            borderRadius: '50%',
+            margin: '64px 0',
+          }}
+        />
+
+        <div
+          style={{
+            fontFamily: 'var(--serif)',
+            fontStyle: 'italic',
+            fontSize: 15,
+            lineHeight: 1.55,
+            color: 'var(--ink-soft)',
+            maxWidth: '24em',
+          }}
+        >
+          For you,<br />
+          who will outski me by ten.
         </div>
       </div>
     </Page>
